@@ -32,14 +32,6 @@
                 images: {},
                 showGallery: false,
                 media: [
-                    {
-                        thumb: 'https://i-thethao.vnecdn.net/2018/05/27/000-15E0FA-1527377507_680x0.jpg',
-                        src: 'https://i-thethao.vnecdn.net/2018/05/27/000-15E0FA-1527377507_680x0.jpg',
-                    },
-                    {
-                        thumb: 'https://i-thethao.vnecdn.net/2018/05/27/000-15E0FA-1527377507_680x0.jpg',
-                        src: 'https://i-thethao.vnecdn.net/2018/05/27/000-15E0FA-1527377507_680x0.jpg',
-                    },
                 ]
             }
         },
