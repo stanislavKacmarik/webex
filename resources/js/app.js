@@ -8,6 +8,12 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 
+require('vue-image-lightbox/dist/vue-image-lightbox.min.css')
+import Vue from 'vue'
+import VueLazyLoad from 'vue-lazyload'
+
+Vue.use(VueLazyLoad)
+
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -27,6 +33,10 @@ Vue.component('app-component', require('./components/AppComponent.vue').default)
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+import LightBox from 'vue-image-lightbox'
 const app = new Vue({
     el: '#app',
+    components: {
+        LightBox,
+    },
 });

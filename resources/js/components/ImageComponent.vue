@@ -1,6 +1,6 @@
 <template>
 
-    <div class="card card-image" style="width: 100%;">
+    <div @click="openGallery" class="card card-image" style="width: 100%;">
 
         <img class="card-img-top" v-bind:src="image.fullPath" alt="Card image cap">
         <div class="card-body">
@@ -24,6 +24,9 @@
                         this.$emit('remove', this.image.id);
                         this.$destroy();
                     });
+            },
+            openGallery() {
+                this.$emit('openGallery', true);
             }
         }
     }
