@@ -1,9 +1,8 @@
 <template>
 
-    <div v-on:click.self="openGallery" class="card card-image" style="width: 100%;">
-
-        <img class="card-img-top" v-bind:src="image.fullPath" alt="Card image cap">
-        <div class="card-body">
+    <div class="card card-image" style="width: 100%;">
+        <img class="card-img-top" @click="openGallery" v-bind:src="image.fullPath" alt="Card image cap">
+        <div class="card-body" @click="openGallery">
             <h5 class="card-title">Description</h5>
             <p class="card-text">{{image.description}}</p>
         </div>
