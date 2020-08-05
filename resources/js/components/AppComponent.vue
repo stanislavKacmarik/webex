@@ -5,16 +5,21 @@
         </div>
 
         <div class="container">
+            <OldImages/>
+            <NewImage/>
 
         </div>
     </div>
 </template>
 
 <script>
+    import NewImage from './NewImage'
+    import OldImages from './OldImages'
 
     export default {
         name: 'app',
         components: {
+            NewImage, OldImages
         }
 
     }
