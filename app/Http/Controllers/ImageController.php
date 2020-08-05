@@ -15,18 +15,8 @@ class ImageController extends Controller
      */
     public function index()
     {
-        $images = Image::query()->where('saved', true)->get();
+        $images = Image::query()->where('saved', true)->orderBy('id', 'DESC')->get();
         return response()->json($images->toArray());
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
     }
 
     /**
@@ -47,28 +37,6 @@ class ImageController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param \App\Image $image
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Image $image)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param \App\Image $image
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Image $image)
-    {
-        //
-    }
-
-    /**
      * Update the specified resource in storage.
      *
      * @param \Illuminate\Http\Request $request
@@ -80,7 +48,7 @@ class ImageController extends Controller
         $image->saved = true;
         $image->description = $request->get('description', '');
         $image->update();
-        return response()->json(['message' => 'saved']);
+        return response()->json($image->toArray());
     }
 
     /**
@@ -91,6 +59,8 @@ class ImageController extends Controller
      */
     public function destroy(Image $image)
     {
-        //
+        Storage::disk('public')->delete('images/' .$image->name);
+        $image->delete();
+        return response()->json(['message' => 'success']);
     }
 }

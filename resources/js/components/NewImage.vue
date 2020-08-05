@@ -1,7 +1,10 @@
 <template>
-    <form class="col-3" v-on:submit.prevent="save">
+    <form class="col-3 pt-4" v-on:submit.prevent="save">
         <div class="form-group">
-            <label for="image">Image</label>
+            <h2 class="text-center">
+                <label for="image">Add image</label>
+            </h2>
+            <img class="card-img-top pb-4" v-if="image" v-bind:src="image.fullPath" alt="Card image cap">
             <input ref="image" v-on:change="uploadFile()"
                    type="file" id="image" accept="image/png, image/jpeg">
         </div>
@@ -39,9 +42,12 @@
                     });
             },
             save() {
-                debugger;
                 axios.put('/image/' + this.image.id, {
                     description: this.description
+                }).then(resp => {
+                    this.$emit('saved', resp.data);
+                    this.image = null;
+                    this.description = '';
                 });
             }
         }

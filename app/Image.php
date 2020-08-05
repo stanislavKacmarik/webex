@@ -9,8 +9,6 @@ use Illuminate\Support\Facades\Storage;
 class Image extends Model
 {
 
-    use SoftDeletes;
-
     protected $fillable = ['name', 'path', 'description', 'saved'];
     protected $appends = ['fullPath'];
 

@@ -1,0 +1,16 @@
+// Variables
+.card-image {
+    .delete {
+        position: absolute;
+        right: 1em;
+        top: 1em;
+        opacity: 0;
+        transition: all 0.2s ease-in;
+    }
+
+    &:hover {
+        .delete {
+            opacity: 1;
+        }
+    }
+}
