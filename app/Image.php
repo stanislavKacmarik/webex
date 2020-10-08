@@ -3,8 +3,6 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
-use Illuminate\Support\Facades\Storage;
 
 class Image extends Model
 {
@@ -14,7 +12,7 @@ class Image extends Model
 
     public function getFullPathAttribute()
     {
-        return '/storage/' . $this->path;
+        return env('STORAGE_IMAGE_PATH', '/storage/') . $this->path;
     }
 
 

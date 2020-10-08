@@ -9,7 +9,7 @@
                    type="file" id="image" accept="image/png, image/jpeg">
         </div>
         <div class="form-group">
-            <label for="email">Description</label>
+            <label for="description">Description</label>
             <input v-model="description" v-on:change="" type="text" id="description" placeholder="Add description"
                    class="form-control">
         </div>
