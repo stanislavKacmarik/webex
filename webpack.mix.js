@@ -11,5 +11,6 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
+mix.js(['resources/js/app.js','resources/js/fcm-init.js'], 'public/js')
+    .js('resources/js/firebase-messaging-sw.js','public')
     .sass('resources/sass/app.scss', 'public/css').version();
